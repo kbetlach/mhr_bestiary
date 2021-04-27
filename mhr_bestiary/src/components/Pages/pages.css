@@ -1,0 +1,10 @@
+body, html {
+    background-image: url(../../assets/images/kamura.jpg);
+}
+
+.jumbotron{
+    border-radius: 25px; 
+    background-color: rgba(47, 79, 79, .9);
+    margin-top: 50px;
+    color: white;
+}
