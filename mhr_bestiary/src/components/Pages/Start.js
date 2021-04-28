@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import Button from '../Button/Button';
 import "./pages.css";
 
 function Start() {
@@ -12,9 +14,14 @@ function Start() {
                     <div className="h2">
                         Your one-stop-shop for all monster information.
                     </div>
-                    <div className="button">
+                    <Link to="/menu"
+                        className={
+                            window.location.pathname === "/menu"
+                    }>
+                    <Button>
                         Begin
-                    </div>
+                    </Button>
+                    </Link>
                 </div>
             </div>
         </div>
