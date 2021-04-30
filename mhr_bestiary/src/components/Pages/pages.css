@@ -1,5 +1,8 @@
 body, html {
     background-image: url(../../assets/images/kamura.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .jumbotron{
@@ -8,3 +11,29 @@ body, html {
     margin-top: 50px;
     color: white;
 }
+
+.img__wrap {
+    position: relative;
+    height: 200px;
+    width: 257px;
+    margin: 25px 0px 50px 0px;
+  }
+  
+  .img__description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+  
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+  }
+  
+  .img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+  }
