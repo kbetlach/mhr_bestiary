@@ -105,6 +105,30 @@ function GreatIzuchi() {
                         }>
                             High Rank Materials
                         </button>
+                        <button className={
+                                toggleState === 3 ? "tabs active-tabs" : "tabs"
+                            }
+                            onClick={
+                                () => toggleTab(3)
+                        }>
+                            Ecology
+                        </button>
+                        <button className={
+                                toggleState === 4 ? "tabs active-tabs" : "tabs"
+                            }
+                            onClick={
+                                () => toggleTab(4)
+                        }>
+                            Physiology
+                        </button>
+                        <button className={
+                                toggleState === 5 ? "tabs active-tabs" : "tabs"
+                            }
+                            onClick={
+                                () => toggleTab(5)
+                        }>
+                            Ailments
+                        </button>
                     </div>
 
                     <div className="content-tabs">
@@ -136,6 +160,21 @@ function GreatIzuchi() {
                             toggleState === 2 ? "content  active-content" : "content"
                         }>
                             <h2>Content 2</h2>
+                        </div>
+                        <div className={
+                            toggleState === 3 ? "content  active-content" : "content"
+                        }>
+                            <h2>Content 3</h2>
+                        </div>
+                        <div className={
+                            toggleState === 4 ? "content  active-content" : "content"
+                        }>
+                            <h2>Content 4</h2>
+                        </div>
+                        <div className={
+                            toggleState === 5 ? "content  active-content" : "content"
+                        }>
+                            <h2>Content 5</h2>
                         </div>
                     </div>
                 </div>
