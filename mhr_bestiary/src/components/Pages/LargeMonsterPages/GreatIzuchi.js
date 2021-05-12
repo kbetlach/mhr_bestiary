@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
+import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
 
 function GreatIzuchi() {
 
@@ -152,98 +153,116 @@ function GreatIzuchi() {
         <div>
             <div className="container w3-container w3-center w3-animate-opacity">
                 <h1>Great Izuchi</h1>
-                <div className="jumbotron">
+                    <div className="jumbotron">
+                        <div className="row">
 
-                    <div className="bloc-tabs">
-                        <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>
-                            Materials
-                        </button>
+                            <div className="col-md-3">
+                                <img src={GreatIzuchiImg} style={{height: "400px"}}alt="great izuchi in game"></img>
+                                <p>Trinity of Terror</p>
+                                <p>Type: Bird Wyvern</p>
+                                <p>Threat Level: 1/10</p>
+                            </div>
 
-                        <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>
-                            Ecology
-                        </button>
+                            <div className="col-md-9">
 
-                        <button className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>
-                            Physiology
-                        </button>
+                                <div className="bloc-tabs">
+                                    <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>
+                                        Materials
+                                    </button>
 
-                        <button className={toggleState === 5 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(5)}>
-                            Ailments
-                        </button>
-                    </div>
+                                    <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>
+                                        Ecology
+                                    </button>
 
-                    <div className="content-tabs">
-                        <div className={toggleState === 1 ? "content  active-content" : "content"}>
+                                    <button className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>
+                                        Physiology
+                                    </button>
 
-                        <Button onClick={() => toggleTab(2)}>
-                            High Rank
-                        </Button>
+                                    <button className={toggleState === 5 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(5)}>
+                                        Ailments
+                                    </button>
+                                </div>
+
+                               <div className="content-tabs">
+                                   <div className={toggleState === 1 ? "content  active-content" : "content"}>
+
+                                  <Button onClick={() => toggleTab(2)}>
+                                      High Rank
+                                  </Button>
                             
-                            <Table responsive>
+                                       <Table responsive>
 
-                                <thead>
-                                    <tr>
-                                        <th>Material</th>
-                                        <th>Target Reward</th>
-                                        <th>Capture Rewards</th>
-                                        <th>Break Part Rewards</th>
-                                        <th>Carves</th>
-                                        <th>Dropped Materials</th>
-                                    </tr>
-                                </thead>
+                                          <thead>
+                                              <tr>
+                                                  <th>Material</th>
+                                                  <th>Target Reward</th>
+                                                  <th>Capture Rewards</th>
+                                                  <th>Break Part Rewards</th>
+                                                  <th>Carves</th>
+                                                  <th>Dropped Materials</th>
+                                              </tr>
+                                          </thead>
 
-                                <tbody> {
-                                    lowRankMaterials.map(renderLowRankMaterials)
-                                } </tbody>
+                                         <tbody> {
+                                             lowRankMaterials.map(renderLowRankMaterials)
+                                         } </tbody>
 
-                            </Table>
-                        </div>
+                                        </Table>
+                                    </div>
 
-                        <div className={toggleState === 2 ? "content  active-content" : "content"}>
+                                 <div className={toggleState === 2 ? "content  active-content" : "content"}>
 
-                            <Button onClick={() => toggleTab(1)}>
-                                Low Rank
-                            </Button>
+                                     <Button onClick={() => toggleTab(1)}>
+                                         Low Rank
+                                     </Button>
 
-                            <Table responsive>
-                                <thead>
-                                    <tr>
-                                        <th>Material</th>
-                                        <th>Target Reward</th>
-                                        <th>Capture Rewards</th>
-                                        <th>Break Part Rewards</th>
-                                        <th>Carves</th>
-                                        <th>Dropped Materials</th>
-                                    </tr>
-                                </thead>
+                                     <Table responsive>
+                                         <thead>
+                                             <tr>
+                                                 <th>Material</th>
+                                                 <th>Target Reward</th>
+                                                 <th>Capture Rewards</th>
+                                                 <th>Break Part Rewards</th>
+                                                 <th>Carves</th>
+                                                 <th>Dropped Materials</th>
+                                             </tr>
+                                         </thead>
 
-                            <tbody> {
-                                highRankMaterials.map(renderHighRankMaterials)} 
-                            </tbody>
+                                        <tbody> {
+                                            highRankMaterials.map(renderHighRankMaterials)} 
+                                        </tbody>
 
-                        </Table>
+                                    </Table>
 
-                        </div>
+                                    </div>
         
-                        <div className={
-                            toggleState === 3 ? "content  active-content" : "content"
-                        }>
-                            <h2>Content 3</h2>
-                        </div>
-                        <div className={
-                            toggleState === 4 ? "content  active-content" : "content"
-                        }>
-                            <h2>Content 4</h2>
-                        </div>
-                        <div className={
-                            toggleState === 5 ? "content  active-content" : "content"
-                        }>
-                            <h2>Content 5</h2>
-                        </div>
+                                    <div className= {toggleState === 3 ? "content  active-content" : "content"}>
+                                        <h3>Characteristics</h3>
+                                            <p>The alpha Izuchi of its pack, identified by its larger build, upended white fur and scythe-like tail.
+                                                A Great Izuchi forms a herd of many smaller Izuchi and selects patrols.
+                                                Once it spots prey or senses danger, the Great Izuchi issues commands to their fellow Izuchi, and coordinates their movements.
+                                                Take care that you don't get overwhelmed.
+                                            </p>
+                                        <h3>Known Habitats</h3>
+                                            <div className="row">
+                                                <div className="col-md-6">Shrine Ruins</div>
+                                                <div className="col-md-6">Frost Islands</div>
+                                            </div>
+                                    </div>
+
+                                    <div className= {toggleState === 4 ? "content  active-content" : "content"}>
+                                        <h2>Content 4</h2>
+                                    </div>
+
+                                    <div className= {toggleState === 5 ? "content  active-content" : "content"}>
+                                        <h2>Content 5</h2>
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 
