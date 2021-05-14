@@ -12,116 +12,48 @@ function GreatIzuchi() {
     };
 
     const lowRankMaterials = [
-        {
-            material: "Great Izuchi Hide",
-            target: "21%",
-            capture: "26%",
-            break: "20% (Tail)",
-            carves: "43% (Body)",
-            dropped: "30%, 60%"
-        },
-        {
-            material: "Great Izuchi Pelt",
-            target: "36%",
-            capture: "39%",
-            break: "30% (Head)",
-            carves: "33% (Body)",
-            dropped: "20%, 40%"
-        },
-        {
-            material: "Great Izuchi Tail",
-            target: "5%",
-            capture: "15%",
-            break: "80% (Tail)",
-            carves: "-",
-            dropped: "-"
-        },
-        {
-            material: "Screamer Sac",
-            target: "26%",
-            capture: "20%",
-            break: "70% (Head)",
-            carves: "24% (Body)",
-            dropped: "-"
-        }, {
-            material: "Monster Bone S",
-            target: "12%",
-            capture: "-",
-            break: "-",
-            carves: "-",
-            dropped: "-"
-        }, {
-            material: "Wyvern Tear",
-            target: "-",
-            capture: "-",
-            break: "-",
-            carves: "-",
-            dropped: "50%"
-        },
+        {material: "Great Izuchi Hide", target: "21%", capture: "26%", break: "20% (Tail)", carves: "43% (Body)", dropped: "30%, 60%"},
+        {material: "Great Izuchi Pelt", target: "36%", capture: "39%", break: "30% (Head)", carves: "33% (Body)", dropped: "20%, 40%"},
+        {material: "Great Izuchi Tail", target: "5%", capture: "15%", break: "80% (Tail)", carves: "-", dropped: "-"},
+        {material: "Screamer Sac", target: "26%", capture: "20%", break: "70% (Head)", carves: "24% (Body)", dropped: "-"},
+        {material: "Monster Bone S", target: "12%", capture: "-", break: "-", carves: "-", dropped: "-"}, 
+        {material: "Wyvern Tear", target: "-", capture: "-", break: "-", carves: "-", dropped: "50%"},
     ]
 
     const highRankMaterials = [
-        {
-            material: "Great Izuchi Hide +",
-            target: "23%",
-            capture: "27%",
-            break: "20% (Tail)",
-            carves: "44% (Body)",
-            dropped: "29%, 60%"
-        },
-        {
-            material: "Great Izuchi Pelt +",
-            target: "39%",
-            capture: "39%",
-            break: "32% (Head)",
-            carves: "35% (Body)",
-            dropped: "20%, 40%"
-        },
-        {
-            material: "Great Izuchi Tail +",
-            target: "5%",
-            capture: "15%",
-            break: "80% (Tail)",
-            carves: "-",
-            dropped: "-"
-        },
-        {
-            material: "Screamer Sac",
-            target: "18%",
-            capture: "16%",
-            break: "65% (Head)",
-            carves: "20% (Body)",
-            dropped: "-"
-        }, {
-            material: "Monster Bone +",
-            target: "13%",
-            capture: "-",
-            break: "-",
-            carves: "-",
-            dropped: "-"
-        }, {
-            material: "Bird Wyvern Gem",
-            target: "2%",
-            capture: "3%",
-            break: "3% (Head)",
-            carves: "1% (Body)",
-            dropped: "1%"
-        }, {
-            material: "Wyvern Tear",
-            target: "-",
-            capture: "-",
-            break: "-",
-            carves: "-",
-            dropped: "30%"
-        }, {
-            material: "Large Wyvern Tear",
-            target: "-",
-            capture: "-",
-            break: "-",
-            carves: "-",
-            dropped: "20%"
-        }
+        {material: "Great Izuchi Hide +", target: "23%", capture: "27%", break: "20% (Tail)", carves: "44% (Body)", dropped: "29%, 60%"},
+        {material: "Great Izuchi Pelt +", target: "39%", capture: "39%", break: "32% (Head)", carves: "35% (Body)", dropped: "20%, 40%"},
+        {material: "Great Izuchi Tail +", target: "5%", capture: "15%", break: "80% (Tail)", carves: "-", dropped: "-"},
+        {material: "Screamer Sac", target: "18%", capture: "16%", break: "65% (Head)", carves: "20% (Body)", dropped: "-"},
+        {material: "Monster Bone +", target: "13%", capture: "-", break: "-", carves: "-", dropped: "-"},
+        {material: "Bird Wyvern Gem", target: "2%", capture: "3%", break: "3% (Head)", carves: "1% (Body)", dropped: "1%"},
+        {material: "Wyvern Tear", target: "-", capture: "-", break: "-", carves: "-", dropped: "30%"},
+        {material: "Large Wyvern Tear", target: "-", capture: "-", break: "-", carves: "-", dropped: "20%"}
     ]
+
+    const physiology = [
+        {bodyPart: "Head", slash: "80", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "10", dragon: "5"},
+        {bodyPart: "Torso", slash: "45", blunt: "45", ammo: "40", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "5"},
+        {bodyPart: "Foreleg", slash: "50", blunt: "50", ammo: "55", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "0"},
+        {bodyPart: "Tail", slash: "55", blunt: "50", ammo: "35", fire: "10", water: "15", thunder: "20", ice: "10", dragon: "5"},
+        {bodyPart: "Tail Tip", slash: "75", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "15", dragon: "10"},
+    ]
+
+    const renderPhysiology = (body, index) => {
+        return (
+            <tr key={index}>
+                <td>{body.bodyPart}</td>
+                <td>{body.slash}</td>
+                <td>{body.blunt}</td>
+                <td>{body.ammo}</td>
+                <td>{body.fire}</td>
+                <td>{body.water}</td>
+                <td>{body.thunder}</td>
+                <td>{body.ice}</td>
+                <td>{body.dragon}</td>
+            </tr>
+        )
+    }
 
     const renderLowRankMaterials = (low, index) => {
         return (
@@ -157,7 +89,7 @@ function GreatIzuchi() {
                         <div className="row">
 
                             <div className="col-md-3">
-                                <img src={GreatIzuchiImg} style={{height: "400px"}}alt="great izuchi in game"></img>
+                                <img src={GreatIzuchiImg} style={{height: "400px", width: "250px"}}alt="great izuchi in game"></img>
                                 <p>Trinity of Terror</p>
                                 <p>Type: Bird Wyvern</p>
                                 <p>Threat Level: 1/10</p>
@@ -251,11 +183,32 @@ function GreatIzuchi() {
                                     </div>
 
                                     <div className= {toggleState === 4 ? "content  active-content" : "content"}>
-                                        <h2>Content 4</h2>
+
+                                    <Table responsive>
+                                         <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Slashing</th>
+                                                <th>Blunt</th>
+                                                <th>Ammo</th>
+                                                <th>Fire</th>
+                                                <th>Water</th>
+                                                <th>Thunder</th>
+                                                <th>Ice</th>
+                                                <th>Dragon</th>
+                                            </tr>
+                                         </thead>
+
+                                        <tbody> {
+                                            physiology.map(renderPhysiology)} 
+                                        </tbody>
+
+                                    </Table>
+
                                     </div>
 
                                     <div className= {toggleState === 5 ? "content  active-content" : "content"}>
-                                        <h2>Content 5</h2>
+                                        <h2>Ailments</h2>
                                     </div>
                                 </div>
                     </div>
