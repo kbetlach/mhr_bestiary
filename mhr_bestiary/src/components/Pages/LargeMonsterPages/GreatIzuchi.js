@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { Bar } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
@@ -209,6 +210,35 @@ function GreatIzuchi() {
 
                                     <div className= {toggleState === 5 ? "content  active-content" : "content"}>
                                         <h2>Ailments</h2>
+
+                                        <Bar
+                                            data={{
+                                                labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Total Damage'],
+                                                datasets: [{data: [4, 4, 4, 3, 4]}
+                                            ],
+                                        }}
+                                            options={{
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'y',
+                                                legend: {
+                                                    label: {
+                                                        display: false
+                                                    }
+                                                },
+                                                scales: {
+                                                    x: {
+                                                        min: 1,
+                                                        max: 5,
+                                                        ticks: {
+                                                            color: 'white'
+                                                          },
+                                                        grid: {
+
+                                                        }
+                                                    }
+                                                }
+                                            }}
+                                        />
                                     </div>
                                 </div>
                     </div>
