@@ -1,8 +1,10 @@
 import {useState} from "react";
-import { Bar } from 'react-chartjs-2';
+import { Bar, Chart } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
+
+Chart.defaults.plugins.legend = false;
 
 function GreatIzuchi() {
 
@@ -209,33 +211,39 @@ function GreatIzuchi() {
                                     </div>
 
                                     <div className= {toggleState === 5 ? "content  active-content" : "content"}>
-                                        <h2>Ailments</h2>
 
                                         <Bar
                                             data={{
                                                 labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Total Damage'],
-                                                datasets: [{data: [4, 4, 4, 3, 4]}
+                                                datasets: [
+                                                    {data: [3, 3, 3, 2, 3],
+                                                    backgroundColor: [
+                                                        'rgba(192, 57, 43, 0.5)',
+                                                        'rgba(233, 212, 96, 0.5)',
+                                                        'rgba(42, 187, 155, 0.5)',
+                                                        'rgba(25, 181, 254, 0.5)',
+                                                        'rgba(191, 85, 236, 0.5)',
+                                                        ],
+                                                    }
                                             ],
                                         }}
                                             options={{
                                                 maintainAspectRatio: true,
                                                 indexAxis: 'y',
-                                                legend: {
-                                                    label: {
-                                                        display: false
-                                                    }
-                                                },
                                                 scales: {
                                                     x: {
-                                                        min: 1,
-                                                        max: 5,
+                                                        min: 0,
+                                                        max: 4,
                                                         ticks: {
-                                                            color: 'white'
+                                                            color: 'white',
+                                                            count: 5
                                                           },
-                                                        grid: {
-
+                                                    },
+                                                    y: {
+                                                        ticks: {
+                                                            color: 'white',
                                                         }
-                                                    }
+                                                    },
                                                 }
                                             }}
                                         />
