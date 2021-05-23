@@ -1,10 +1,8 @@
 import {useState} from "react";
-import { Bar, Chart } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
+import BarChart from '../../BarChart/BarChart';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
-
-Chart.defaults.plugins.legend = false;
 
 function GreatIzuchi() {
 
@@ -211,42 +209,26 @@ function GreatIzuchi() {
                                     </div>
 
                                     <div className= {toggleState === 5 ? "content  active-content" : "content"}>
+                                        <div className="row">
+                                        <h2>Ailment Effectiveness</h2>
 
-                                        <Bar
-                                            data={{
-                                                labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Total Damage'],
-                                                datasets: [
-                                                    {data: [3, 3, 3, 2, 3],
-                                                    backgroundColor: [
-                                                        'rgba(192, 57, 43, 0.5)',
-                                                        'rgba(233, 212, 96, 0.5)',
-                                                        'rgba(42, 187, 155, 0.5)',
-                                                        'rgba(25, 181, 254, 0.5)',
-                                                        'rgba(191, 85, 236, 0.5)',
-                                                        ],
-                                                    }
-                                            ],
-                                        }}
-                                            options={{
-                                                maintainAspectRatio: true,
-                                                indexAxis: 'y',
-                                                scales: {
-                                                    x: {
-                                                        min: 0,
-                                                        max: 4,
-                                                        ticks: {
-                                                            color: 'white',
-                                                            count: 5
-                                                          },
-                                                    },
-                                                    y: {
-                                                        ticks: {
-                                                            color: 'white',
-                                                        }
-                                                    },
-                                                }
-                                            }}
-                                        />
+                                            <div className="col-md-4">
+                                                <ul>Poison</ul>
+                                                <ul>Stun</ul>
+                                                <ul>Paralysis</ul>
+                                                <ul>Sleep</ul>
+                                                <ul>Blast</ul>
+                                                <ul>Exhaust</ul>
+                                                <ul>Fireblight</ul>
+                                                <ul>Waterblight</ul>
+                                                <ul>Thunderblight</ul>
+                                                <ul>Iceblight</ul>
+                                            </div>
+
+                                            <div className="col-md-8">
+                                                <BarChart />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                     </div>
