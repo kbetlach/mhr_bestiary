@@ -2,6 +2,7 @@ import {useState} from "react";
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
 import BarChart from '../../BarChart/BarChart';
+import Header from '../../Header/Header';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
 
 function GreatIzuchi() {
@@ -84,8 +85,10 @@ function GreatIzuchi() {
 
     return (
         <div>
+            <Header />
+
             <div className="container w3-container w3-center w3-animate-opacity">
-                <h1>Great Izuchi</h1>
+                <h1 style={{color: 'white'}}>Great Izuchi</h1>
                     <div className="jumbotron">
                         <div className="row">
 
