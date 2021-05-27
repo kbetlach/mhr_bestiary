@@ -86,3 +86,7 @@ body, html {
   .active-content {
     display: block;
   }
+
+  ul:hover {
+    cursor: pointer;
+  }

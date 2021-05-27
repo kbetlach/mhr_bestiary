@@ -1,9 +1,11 @@
 import {useState} from "react";
+import { Bar, Chart } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
-import BarChart from '../../BarChart/BarChart';
 import Header from '../../Header/Header';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
+
+Chart.defaults.plugins.legend = false;
 
 function GreatIzuchi() {
 
@@ -12,6 +14,9 @@ function GreatIzuchi() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
+
+    const ailments = ["Poison", "Stun", "Paralysis", "Sleep", "Blast", "Exhaust", "Fireblight", "Waterblight", "Thunderblight", "Iceblight"];
+    const [selectedAilment, setAilment] = useState("");
 
     const lowRankMaterials = [
         {material: "Great Izuchi Hide", target: "21%", capture: "26%", break: "20% (Tail)", carves: "43% (Body)", dropped: "30%, 60%"},
@@ -82,6 +87,118 @@ function GreatIzuchi() {
             </tr>
         )
     }
+
+    const [poisonData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Total Damage'],
+        datasets: [
+            {data: [3, 3, 3, 2, 3],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [stunData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [3, 3, 3, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [paralysisData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [3, 3, 3, 2, 3],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [sleepData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [3, 3, 3, 2, 3],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [blastData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Damage'],
+        datasets: [
+            {data: [3, 3, 2, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [exhaustData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Stamina Loss'],
+        datasets: [
+            {data: [3, 4, 3, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [fireBlightData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Total Damage'],
+        datasets: [
+            {data: [2, 2, 2, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [waterBlightData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [2, 2, 2, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [thunderBlightData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [2, 2, 2, 2, 3],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+
+    const [iceBlightData] = useState({
+        labels: ['Initial Resistance', 'Next Resistance Threshold', 'Maximum Resistance', 'Natural Buildup Degradation', 'Effect Duration'],
+        datasets: [
+            {data: [2, 2, 2, 2, 2],
+                backgroundColor: ['rgba(192, 57, 43, 0.5)', 'rgba(233, 212, 96, 0.5)', 'rgba(42, 187, 155, 0.5)', 'rgba(25, 181, 254, 0.5)', 'rgba(191, 85, 236, 0.5)']
+            }
+        ]
+    });
+    
+    const [barOptions] = useState({
+        options: {
+            maintainAspectRatio: true,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    min: 0,
+                    max: 4,
+                    ticks: {
+                        color: 'white',
+                        count: 5
+                      },
+                },
+                y: {
+                    ticks: {
+                        color: 'white',
+                    }
+                },
+            }
+        }
+    });
 
     return (
         <div>
@@ -216,20 +333,81 @@ function GreatIzuchi() {
                                         <h2>Ailment Effectiveness</h2>
 
                                             <div className="col-md-4">
-                                                <ul>Poison</ul>
-                                                <ul>Stun</ul>
-                                                <ul>Paralysis</ul>
-                                                <ul>Sleep</ul>
-                                                <ul>Blast</ul>
-                                                <ul>Exhaust</ul>
-                                                <ul>Fireblight</ul>
-                                                <ul>Waterblight</ul>
-                                                <ul>Thunderblight</ul>
-                                                <ul>Iceblight</ul>
+                                                {ailments.map(ailment => (
+                                                    <ul
+                                                        cursor="pointer"
+                                                        key={ailment}
+                                                        onClick={() => setAilment(ailment)}
+                                                        > {ailment}                    
+                                                    </ul>
+                                                ))}
                                             </div>
 
                                             <div className="col-md-8">
-                                                <BarChart />
+                                                <p>{selectedAilment}</p>
+                                            
+                                            {selectedAilment === "Poison" && (
+                                                <Bar
+                                                    data={poisonData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                            {selectedAilment === "Stun" && (
+                                                <Bar
+                                                    data={stunData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Paralysis" && (
+                                                <Bar
+                                                    data={paralysisData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Sleep" && (
+                                                <Bar
+                                                    data={sleepData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Blast" && (
+                                                <Bar
+                                                    data={blastData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Exhaust" && (
+                                                <Bar
+                                                    data={exhaustData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Fireblight" && (
+                                                <Bar
+                                                    data={fireBlightData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Waterblight" && (
+                                                <Bar
+                                                    data={waterBlightData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Thunderblight" && (
+                                                <Bar
+                                                    data={thunderBlightData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                              {selectedAilment === "Iceblight" && (
+                                                <Bar
+                                                    data={iceBlightData}
+                                                    options={barOptions.options}
+                                                />
+                                            )}
+                                        
+                                                
                                             </div>
                                         </div>
                                     </div>
