@@ -4,6 +4,25 @@ import Table from 'react-bootstrap/Table';
 import Button from '../../Button/Button';
 import Header from '../../Header/Header';
 import GreatIzuchiImg from '../../../assets/images/LargeMonsters/greatIzuchi.jpg';
+import CutImg from '../../../assets/images/ElementsAilmentsDamage/cut.jpg';
+import BluntImg from '../../../assets/images/ElementsAilmentsDamage/blunt.jpg';
+import AmmoImg from '../../../assets/images/ElementsAilmentsDamage/ammo.jpg';
+import FireImg from '../../../assets/images/ElementsAilmentsDamage/fire.jpg';
+import WaterImg from '../../../assets/images/ElementsAilmentsDamage/water.jpg';
+import ThunderImg from '../../../assets/images/ElementsAilmentsDamage/thunder.jpg';
+import IceImg from '../../../assets/images/ElementsAilmentsDamage/ice.jpg';
+import DragonImg from '../../../assets/images/ElementsAilmentsDamage/dragon.jpg';
+import PoisonImg from '../../../assets/images/ElementsAilmentsDamage/poison.jpg';
+import StunImg from '../../../assets/images/ElementsAilmentsDamage/stun.jpg';
+import ParalysisImg from '../../../assets/images/ElementsAilmentsDamage/paralysis.jpg';
+import SleepImg from '../../../assets/images/ElementsAilmentsDamage/sleep.jpg';
+import BlastImg from '../../../assets/images/ElementsAilmentsDamage/blast.jpg';
+import ExhaustImg from '../../../assets/images/ElementsAilmentsDamage/blast.jpg';
+import FireblightImg from '../../../assets/images/ElementsAilmentsDamage/fireblight.jpg';
+import WaterblightImg from '../../../assets/images/ElementsAilmentsDamage/waterblight.jpg';
+import ThunderblightImg from '../../../assets/images/ElementsAilmentsDamage/thunderblight.jpg';
+import IceblightImg from '../../../assets/images/ElementsAilmentsDamage/iceblight.jpg';
+import DragonblightImg from '../../../assets/images/ElementsAilmentsDamage/dragonblight.jpg';
 
 Chart.defaults.plugins.legend = false;
 
@@ -39,18 +58,18 @@ function GreatIzuchi() {
     ]
 
     const physiology = [
-        {bodyPart: "Head", slash: "80", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "10", dragon: "5"},
-        {bodyPart: "Torso", slash: "45", blunt: "45", ammo: "40", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "5"},
-        {bodyPart: "Foreleg", slash: "50", blunt: "50", ammo: "55", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "0"},
-        {bodyPart: "Tail", slash: "55", blunt: "50", ammo: "35", fire: "10", water: "15", thunder: "20", ice: "10", dragon: "5"},
-        {bodyPart: "Tail Tip", slash: "75", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "15", dragon: "10"},
+        {bodyPart: "Head", cut: "80", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "10", dragon: "5"},
+        {bodyPart: "Torso", cut: "45", blunt: "45", ammo: "40", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "5"},
+        {bodyPart: "Foreleg", cut: "50", blunt: "50", ammo: "55", fire: "10", water: "10", thunder: "15", ice: "10", dragon: "0"},
+        {bodyPart: "Tail", cut: "55", blunt: "50", ammo: "35", fire: "10", water: "15", thunder: "20", ice: "10", dragon: "5"},
+        {bodyPart: "Tail Tip", cut: "75", blunt: "80", ammo: "75", fire: "10", water: "20", thunder: "25", ice: "15", dragon: "10"},
     ]
 
     const renderPhysiology = (body, index) => {
         return (
             <tr key={index}>
                 <td>{body.bodyPart}</td>
-                <td>{body.slash}</td>
+                <td>{body.cut}</td>
                 <td>{body.blunt}</td>
                 <td>{body.ammo}</td>
                 <td>{body.fire}</td>
@@ -309,14 +328,14 @@ function GreatIzuchi() {
                                          <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Slashing</th>
-                                                <th>Blunt</th>
-                                                <th>Ammo</th>
-                                                <th>Fire</th>
-                                                <th>Water</th>
-                                                <th>Thunder</th>
-                                                <th>Ice</th>
-                                                <th>Dragon</th>
+                                                <th><img class="damageIcons" src={CutImg} alt="cut icon"></img></th>
+                                                <th><img class="damageIcons" src={BluntImg} alt="blunt icon"></img></th>
+                                                <th><img class="damageIcons" src={AmmoImg} alt="ammo icon"></img></th>
+                                                <th><img class="damageIcons" src={FireImg} alt="fire icon"></img></th>
+                                                <th><img class="damageIcons" src={WaterImg} alt="water icon"></img></th>
+                                                <th><img class="damageIcons" src={ThunderImg} alt="thunder icon"></img></th>
+                                                <th><img class="damageIcons" src={IceImg} alt="ice icon"></img></th>
+                                                <th><img class="damageIcons" src={DragonImg} alt="dragon icon"></img></th>
                                             </tr>
                                          </thead>
 
@@ -338,7 +357,9 @@ function GreatIzuchi() {
                                                         cursor="pointer"
                                                         key={ailment}
                                                         onClick={() => setAilment(ailment)}
-                                                        > {ailment}                    
+                                                        style={{textAlign: 'left'}}
+                                                    > 
+                                                        {ailment}                    
                                                     </ul>
                                                 ))}
                                             </div>
