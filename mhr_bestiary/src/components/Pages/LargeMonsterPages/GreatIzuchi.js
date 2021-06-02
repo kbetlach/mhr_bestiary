@@ -22,7 +22,6 @@ import FireblightImg from '../../../assets/images/ElementsAilmentsDamage/firebli
 import WaterblightImg from '../../../assets/images/ElementsAilmentsDamage/waterblight.jpg';
 import ThunderblightImg from '../../../assets/images/ElementsAilmentsDamage/thunderblight.jpg';
 import IceblightImg from '../../../assets/images/ElementsAilmentsDamage/iceblight.jpg';
-import DragonblightImg from '../../../assets/images/ElementsAilmentsDamage/dragonblight.jpg';
 
 Chart.defaults.plugins.legend = false;
 
@@ -33,7 +32,7 @@ function GreatIzuchi() {
     const toggleTab = (index) => {
         setToggleState(index);
     };
-
+    
     const ailments = ["Poison", "Stun", "Paralysis", "Sleep", "Blast", "Exhaust", "Fireblight", "Waterblight", "Thunderblight", "Iceblight"];
     const [selectedAilment, setAilment] = useState("");
 
@@ -352,6 +351,7 @@ function GreatIzuchi() {
                                         <h2>Ailment Effectiveness</h2>
 
                                             <div className="col-md-4">
+
                                                 {ailments.map(ailment => (
                                                     <ul
                                                         cursor="pointer"
@@ -359,76 +359,103 @@ function GreatIzuchi() {
                                                         onClick={() => setAilment(ailment)}
                                                         style={{textAlign: 'left'}}
                                                     > 
-                                                        {ailment}                    
+                                                        {ailment}
                                                     </ul>
                                                 ))}
                                             </div>
 
                                             <div className="col-md-8">
-                                                <p>{selectedAilment}</p>
                                             
                                             {selectedAilment === "Poison" && (
-                                                <Bar
-                                                    data={poisonData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Poison <img src={PoisonImg} alt="poison icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={poisonData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                             {selectedAilment === "Stun" && (
-                                                <Bar
-                                                    data={stunData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Stun <img src={StunImg} alt="stun icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={stunData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Paralysis" && (
-                                                <Bar
-                                                    data={paralysisData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Paralysis <img src={ParalysisImg} alt="paralysis icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={paralysisData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Sleep" && (
-                                                <Bar
-                                                    data={sleepData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Sleep <img src={SleepImg} alt="sleep icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={sleepData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Blast" && (
-                                                <Bar
-                                                    data={blastData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Blast <img src={BlastImg} alt="blast icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={blastData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Exhaust" && (
-                                                <Bar
-                                                    data={exhaustData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Exhaust <img src={ExhaustImg} alt="exhaust icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={exhaustData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Fireblight" && (
-                                                <Bar
-                                                    data={fireBlightData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Fireblight <img src={FireblightImg} alt="fireblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                        <Bar
+                                                        data={fireBlightData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Waterblight" && (
-                                                <Bar
-                                                    data={waterBlightData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Waterblight <img src={WaterblightImg} alt="waterblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={waterBlightData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Thunderblight" && (
-                                                <Bar
-                                                    data={thunderBlightData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Thunderblight <img src={ThunderblightImg} alt="thunderblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={thunderBlightData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
                                               {selectedAilment === "Iceblight" && (
-                                                <Bar
-                                                    data={iceBlightData}
-                                                    options={barOptions.options}
-                                                />
+                                                <div>
+                                                    <p>Iceblight <img src={IceblightImg} alt="iceblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <Bar
+                                                        data={iceBlightData}
+                                                        options={barOptions.options}
+                                                    />
+                                                </div>
                                             )}
-                                        
-                                                
                                             </div>
                                         </div>
                                     </div>
