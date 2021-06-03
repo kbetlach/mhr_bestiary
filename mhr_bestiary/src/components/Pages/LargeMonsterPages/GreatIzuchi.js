@@ -33,7 +33,18 @@ function GreatIzuchi() {
         setToggleState(index);
     };
     
-    const ailments = ["Poison", "Stun", "Paralysis", "Sleep", "Blast", "Exhaust", "Fireblight", "Waterblight", "Thunderblight", "Iceblight"];
+    const [ailments] = useState([
+                        {id: 1, aName:"Poison", image: <img src={PoisonImg} alt="poison icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 2, aName:"Stun", image: <img src={StunImg} alt="stun icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 3, aName:"Paralysis", image: <img src={ParalysisImg} alt="paralysis icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 4, aName:"Sleep", image: <img src={SleepImg} alt="sleep icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 5, aName:"Blast", image: <img src={BlastImg} alt="blast icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 6, aName:"Exhaust", image: <img src={ExhaustImg} alt="Exhaust icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 7, aName:"Fireblight", image: <img src={FireblightImg} alt="fireblight icon"></img>, effectiveness: "⭐"}, 
+                        {id: 8, aName:"Waterblight", image: <img src={WaterblightImg} alt="waterblight icon"></img>, effectiveness: "⭐"}, 
+                        {id: 9, aName:"Thunderblight", image: <img src={ThunderblightImg} alt="thunderblight icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 10, aName:"Iceblight", image: <img src={IceblightImg} alt="iceblight icon"></img>, effectiveness: "⭐"}, 
+                       ]);
     const [selectedAilment, setAilment] = useState("");
 
     const lowRankMaterials = [
@@ -352,21 +363,21 @@ function GreatIzuchi() {
 
                                             <div className="col-md-4">
 
-                                                {ailments.map(ailment => (
+                                                {ailments.map(aObj => (
                                                     <ul
                                                         cursor="pointer"
-                                                        key={ailment}
-                                                        onClick={() => setAilment(ailment)}
-                                                        style={{textAlign: 'left'}}
-                                                    > 
-                                                        {ailment}
+                                                        key={aObj.id}
+                                                        onClick={() => setAilment(aObj)}
+                                                        style={{textAlign: 'left', fontSize: '16px'}}
+                                                    >
+                                                        {aObj.image}{aObj.aName}{aObj.effectiveness}
                                                     </ul>
                                                 ))}
                                             </div>
 
                                             <div className="col-md-8">
                                             
-                                            {selectedAilment === "Poison" && (
+                                            {selectedAilment === ailments[0] && (
                                                 <div>
                                                     <p>Poison <img src={PoisonImg} alt="poison icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -375,7 +386,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                            {selectedAilment === "Stun" && (
+                                            {selectedAilment === ailments[1] && (
                                                 <div>
                                                     <p>Stun <img src={StunImg} alt="stun icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -384,7 +395,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Paralysis" && (
+                                              {selectedAilment === ailments[2] && (
                                                 <div>
                                                     <p>Paralysis <img src={ParalysisImg} alt="paralysis icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -393,7 +404,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Sleep" && (
+                                              {selectedAilment === ailments[3] && (
                                                 <div>
                                                     <p>Sleep <img src={SleepImg} alt="sleep icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -402,7 +413,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Blast" && (
+                                              {selectedAilment === ailments[4] && (
                                                 <div>
                                                     <p>Blast <img src={BlastImg} alt="blast icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -411,7 +422,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Exhaust" && (
+                                              {selectedAilment === ailments[5] && (
                                                 <div>
                                                     <p>Exhaust <img src={ExhaustImg} alt="exhaust icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -420,7 +431,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Fireblight" && (
+                                              {selectedAilment === ailments[6] && (
                                                 <div>
                                                     <p>Fireblight <img src={FireblightImg} alt="fireblight icon" style={{height: '40px', width: '40px'}}></img></p>
                                                         <Bar
@@ -429,7 +440,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Waterblight" && (
+                                              {selectedAilment === ailments[7] && (
                                                 <div>
                                                     <p>Waterblight <img src={WaterblightImg} alt="waterblight icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -438,7 +449,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Thunderblight" && (
+                                              {selectedAilment === ailments[8] && (
                                                 <div>
                                                     <p>Thunderblight <img src={ThunderblightImg} alt="thunderblight icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
@@ -447,7 +458,7 @@ function GreatIzuchi() {
                                                     />
                                                 </div>
                                             )}
-                                              {selectedAilment === "Iceblight" && (
+                                              {selectedAilment === ailments[9] && (
                                                 <div>
                                                     <p>Iceblight <img src={IceblightImg} alt="iceblight icon" style={{height: '40px', width: '40px'}}></img></p>
                                                     <Bar
