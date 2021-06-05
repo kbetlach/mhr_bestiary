@@ -6,13 +6,14 @@ function Header() {
 
   return (
   
-    <nav className="navbar main-header" style={{padding: 10, backgroundColor: "darkslategray", color: "white"}}>
-        <ul className="nav">
+    <nav className="navbar main-header" style={{fontSize: '24px', padding: 10, backgroundColor: "darkslategray", color: "white"}}>
+        <div className="nav">
             <Link to='/menu' className={window.location.pathname === '/menu'}>
                 <Button>Monster Menu</Button>
              </Link>
-        </ul>
-</nav>
+             <p style={{float: 'right'}}>Monster Hunter Bestiary</p>
+        </div>
+    </nav>
 
   );
 }

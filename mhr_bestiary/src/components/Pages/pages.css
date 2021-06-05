@@ -98,7 +98,13 @@ body, html {
     left: 10px;
   }
 
-  img {
+  .ailmentImage {
     height: 40px;
     width: 40px;
+  }
+
+  .materialHeaders {
+    position: relative;
+    left: 10px;
+    font-size: 14px;
   }

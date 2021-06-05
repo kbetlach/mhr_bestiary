@@ -34,16 +34,16 @@ function GreatIzuchi() {
     };
     
     const [ailments] = useState([
-                        {id: 1, aName:"Poison", image: <img src={PoisonImg} alt="poison icon"></img>, effectiveness: "⭐⭐⭐"}, 
-                        {id: 2, aName:"Stun", image: <img src={StunImg} alt="stun icon"></img>, effectiveness: "⭐⭐"}, 
-                        {id: 3, aName:"Paralysis", image: <img src={ParalysisImg} alt="paralysis icon"></img>, effectiveness: "⭐⭐⭐"}, 
-                        {id: 4, aName:"Sleep", image: <img src={SleepImg} alt="sleep icon"></img>, effectiveness: "⭐⭐⭐"}, 
-                        {id: 5, aName:"Blast", image: <img src={BlastImg} alt="blast icon"></img>, effectiveness: "⭐⭐"}, 
-                        {id: 6, aName:"Exhaust", image: <img src={ExhaustImg} alt="Exhaust icon"></img>, effectiveness: "⭐⭐⭐"}, 
-                        {id: 7, aName:"Fireblight", image: <img src={FireblightImg} alt="fireblight icon"></img>, effectiveness: "⭐"}, 
-                        {id: 8, aName:"Waterblight", image: <img src={WaterblightImg} alt="waterblight icon"></img>, effectiveness: "⭐"}, 
-                        {id: 9, aName:"Thunderblight", image: <img src={ThunderblightImg} alt="thunderblight icon"></img>, effectiveness: "⭐⭐"}, 
-                        {id: 10, aName:"Iceblight", image: <img src={IceblightImg} alt="iceblight icon"></img>, effectiveness: "⭐"}, 
+                        {id: 1, aName:"Poison", image: <img src={PoisonImg} className="ailmentImage" alt="poison icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 2, aName:"Stun", image: <img src={StunImg} className="ailmentImage" alt="stun icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 3, aName:"Paralysis", image: <img src={ParalysisImg} className="ailmentImage" alt="paralysis icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 4, aName:"Sleep", image: <img src={SleepImg} className="ailmentImage" alt="sleep icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 5, aName:"Blast", image: <img src={BlastImg} className="ailmentImage" alt="blast icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 6, aName:"Exhaust", image: <img src={ExhaustImg} className="ailmentImage" alt="Exhaust icon"></img>, effectiveness: "⭐⭐⭐"}, 
+                        {id: 7, aName:"Fireblight", image: <img src={FireblightImg} className="ailmentImage" alt="fireblight icon"></img>, effectiveness: "⭐"}, 
+                        {id: 8, aName:"Waterblight", image: <img src={WaterblightImg} className="ailmentImage" alt="waterblight icon"></img>, effectiveness: "⭐"}, 
+                        {id: 9, aName:"Thunderblight", image: <img src={ThunderblightImg} className="ailmentImage" alt="thunderblight icon"></img>, effectiveness: "⭐⭐"}, 
+                        {id: 10, aName:"Iceblight", image: <img src={IceblightImg} className="ailmentImage" alt="iceblight icon"></img>, effectiveness: "⭐"}, 
                        ]);
     const [selectedAilment, setAilment] = useState("");
 
@@ -238,87 +238,34 @@ function GreatIzuchi() {
                     <div className="jumbotron">
                         <div className="row">
 
-                            <div className="col-md-3">
-                                <img src={GreatIzuchiImg} style={{height: "400px", width: "250px"}}alt="great izuchi in game"></img>
+                            <div className="col-md-2">
+                                <img src={GreatIzuchiImg} style={{height: "400px", width: "225px"}}alt="great izuchi in game"></img>
                                 <p>Trinity of Terror</p>
                                 <p>Type: Bird Wyvern</p>
                                 <p>Threat Level: 1/10</p>
                             </div>
 
-                            <div className="col-md-9">
+                            <div className="col-md-10">
 
                                 <div className="bloc-tabs">
                                     <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>
-                                        Materials
-                                    </button>
-
-                                    <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>
                                         Ecology
                                     </button>
 
-                                    <button className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>
+                                    <button className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>
                                         Physiology
                                     </button>
 
-                                    <button className={toggleState === 5 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(5)}>
+                                    <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>
                                         Ailments
                                     </button>
+
+                                    <button className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>
+                                        Materials
+                                    </button>
                                 </div>
-
-                               <div className="content-tabs">
-                                   <div className={toggleState === 1 ? "content  active-content" : "content"}>
-
-                                  <Button onClick={() => toggleTab(2)}>
-                                      High Rank
-                                  </Button>
-                            
-                                       <Table responsive>
-
-                                          <thead>
-                                              <tr>
-                                                  <th>Material</th>
-                                                  <th>Target Reward</th>
-                                                  <th>Capture Rewards</th>
-                                                  <th>Break Part Rewards</th>
-                                                  <th>Carves</th>
-                                                  <th>Dropped Materials</th>
-                                              </tr>
-                                          </thead>
-
-                                         <tbody> {
-                                             lowRankMaterials.map(renderLowRankMaterials)
-                                         } </tbody>
-
-                                        </Table>
-                                    </div>
-
-                                 <div className={toggleState === 2 ? "content  active-content" : "content"}>
-
-                                     <Button onClick={() => toggleTab(1)}>
-                                         Low Rank
-                                     </Button>
-
-                                     <Table responsive>
-                                         <thead>
-                                             <tr>
-                                                 <th>Material</th>
-                                                 <th>Target Reward</th>
-                                                 <th>Capture Rewards</th>
-                                                 <th>Break Part Rewards</th>
-                                                 <th>Carves</th>
-                                                 <th>Dropped Materials</th>
-                                             </tr>
-                                         </thead>
-
-                                        <tbody> {
-                                            highRankMaterials.map(renderHighRankMaterials)} 
-                                        </tbody>
-
-                                    </Table>
-
-                                    </div>
         
-                                    <div className= {toggleState === 3 ? "content  active-content" : "content"}>
+                                    <div className= {toggleState === 1 ? "content  active-content" : "content"}>
                                         <h3>Characteristics</h3>
                                             <p>The alpha Izuchi of its pack, identified by its larger build, upended white fur and scythe-like tail.
                                                 A Great Izuchi forms a herd of many smaller Izuchi and selects patrols.
@@ -332,7 +279,7 @@ function GreatIzuchi() {
                                             </div>
                                     </div>
 
-                                    <div className= {toggleState === 4 ? "content  active-content" : "content"}>
+                                    <div className= {toggleState === 2 ? "content  active-content" : "content"}>
 
                                     <Table responsive>
                                          <thead>
@@ -357,7 +304,7 @@ function GreatIzuchi() {
 
                                     </div>
 
-                                    <div className= {toggleState === 5 ? "content  active-content" : "content"}>
+                                    <div className= {toggleState === 3 ? "content  active-content" : "content"}>
                                         <div className="row">
                                         <h2>Ailment Effectiveness</h2>
 
@@ -379,7 +326,7 @@ function GreatIzuchi() {
                                             
                                             {selectedAilment === ailments[0] && (
                                                 <div>
-                                                    <p>Poison <img src={PoisonImg} alt="poison icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Poison <img src={PoisonImg} className="ailmentImage" alt="poison icon"></img></p>
                                                     <Bar
                                                         data={poisonData}
                                                         options={barOptions.options}
@@ -388,7 +335,7 @@ function GreatIzuchi() {
                                             )}
                                             {selectedAilment === ailments[1] && (
                                                 <div>
-                                                    <p>Stun <img src={StunImg} alt="stun icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Stun <img src={StunImg} className="ailmentImage" alt="stun icon"></img></p>
                                                     <Bar
                                                         data={stunData}
                                                         options={barOptions.options}
@@ -397,7 +344,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[2] && (
                                                 <div>
-                                                    <p>Paralysis <img src={ParalysisImg} alt="paralysis icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Paralysis <img src={ParalysisImg} className="ailmentImage" alt="paralysis icon"></img></p>
                                                     <Bar
                                                         data={paralysisData}
                                                         options={barOptions.options}
@@ -406,7 +353,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[3] && (
                                                 <div>
-                                                    <p>Sleep <img src={SleepImg} alt="sleep icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Sleep <img src={SleepImg} className="ailmentImage" alt="sleep icon"></img></p>
                                                     <Bar
                                                         data={sleepData}
                                                         options={barOptions.options}
@@ -415,7 +362,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[4] && (
                                                 <div>
-                                                    <p>Blast <img src={BlastImg} alt="blast icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Blast <img src={BlastImg} className="ailmentImage" alt="blast icon"></img></p>
                                                     <Bar
                                                         data={blastData}
                                                         options={barOptions.options}
@@ -424,7 +371,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[5] && (
                                                 <div>
-                                                    <p>Exhaust <img src={ExhaustImg} alt="exhaust icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Exhaust <img src={ExhaustImg} className="ailmentImage" alt="exhaust icon"></img></p>
                                                     <Bar
                                                         data={exhaustData}
                                                         options={barOptions.options}
@@ -433,7 +380,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[6] && (
                                                 <div>
-                                                    <p>Fireblight <img src={FireblightImg} alt="fireblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Fireblight <img src={FireblightImg} className="ailmentImage" alt="fireblight icon"></img></p>
                                                         <Bar
                                                         data={fireBlightData}
                                                         options={barOptions.options}
@@ -442,7 +389,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[7] && (
                                                 <div>
-                                                    <p>Waterblight <img src={WaterblightImg} alt="waterblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Waterblight <img src={WaterblightImg} className="ailmentImage" alt="waterblight icon"></img></p>
                                                     <Bar
                                                         data={waterBlightData}
                                                         options={barOptions.options}
@@ -451,7 +398,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[8] && (
                                                 <div>
-                                                    <p>Thunderblight <img src={ThunderblightImg} alt="thunderblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Thunderblight <img src={ThunderblightImg} className="ailmentImage" alt="thunderblight icon"></img></p>
                                                     <Bar
                                                         data={thunderBlightData}
                                                         options={barOptions.options}
@@ -460,7 +407,7 @@ function GreatIzuchi() {
                                             )}
                                               {selectedAilment === ailments[9] && (
                                                 <div>
-                                                    <p>Iceblight <img src={IceblightImg} alt="iceblight icon" style={{height: '40px', width: '40px'}}></img></p>
+                                                    <p>Iceblight <img src={IceblightImg} className="ailmentImage" alt="iceblight icon"></img></p>
                                                     <Bar
                                                         data={iceBlightData}
                                                         options={barOptions.options}
@@ -468,7 +415,61 @@ function GreatIzuchi() {
                                                 </div>
                                             )}
                                             </div>
+                                            
                                         </div>
+                                    </div>
+
+                                    <div className="content-tabs">
+                                   <div className={toggleState === 4 ? "content  active-content" : "content"}>
+
+                                  <Button onClick={() => toggleTab(5)}>
+                                      High Rank
+                                  </Button>
+                            
+                                       <Table responsive>
+
+                                          <thead>
+                                              <tr>
+                                                  <th className="materialHeaders">Material</th>
+                                                  <th className="materialHeaders">Target Reward</th>
+                                                  <th className="materialHeaders">Capture Rewards</th>
+                                                  <th className="materialHeaders">Break Part Rewards</th>
+                                                  <th className="materialHeaders">Carves</th>
+                                                  <th className="materialHeaders">Dropped Materials</th>
+                                              </tr>
+                                          </thead>
+
+                                         <tbody> {
+                                             lowRankMaterials.map(renderLowRankMaterials)
+                                         } </tbody>
+
+                                        </Table>
+                                    </div>
+
+                                 <div className={toggleState === 5 ? "content  active-content" : "content"}>
+
+                                     <Button onClick={() => toggleTab(4)}>
+                                         Low Rank
+                                     </Button>
+
+                                     <Table responsive>
+                                         <thead>
+                                             <tr>
+                                                 <th className="materialHeaders">Material</th>
+                                                 <th className="materialHeaders">Target Reward</th>
+                                                 <th className="materialHeaders">Capture Rewards</th>
+                                                 <th className="materialHeaders">Break Part Rewards</th>
+                                                 <th className="materialHeaders">Carves</th>
+                                                 <th className="materialHeaders">Dropped Materials</th>
+                                             </tr>
+                                         </thead>
+
+                                        <tbody> {
+                                            highRankMaterials.map(renderHighRankMaterials)} 
+                                        </tbody>
+
+                                    </Table>
+
                                     </div>
                                 </div>
                     </div>
