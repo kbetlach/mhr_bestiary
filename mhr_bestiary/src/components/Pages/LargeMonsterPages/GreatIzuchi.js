@@ -240,9 +240,9 @@ function GreatIzuchi() {
 
                             <div className="col-md-2">
                                 <img src={GreatIzuchiImg} style={{height: "400px", width: "225px"}}alt="great izuchi in game"></img>
-                                <p>Trinity of Terror</p>
-                                <p>Type: Bird Wyvern</p>
-                                <p>Threat Level: 1/10</p>
+                                <p style={{fontSize: '18px'}}>Trinity of Terror</p>
+                                <p style={{fontSize: '18px'}}>Type: Bird Wyvern</p>
+                                <p style={{fontSize: '18px'}}>Threat Level: 1/10</p>
                             </div>
 
                             <div className="col-md-10">
@@ -315,9 +315,9 @@ function GreatIzuchi() {
                                                         cursor="pointer"
                                                         key={aObj.id}
                                                         onClick={() => setAilment(aObj)}
-                                                        style={{textAlign: 'left', fontSize: '16px'}}
+                                                        style={{textAlign: 'left', fontSize: '16px', marginTop: '5px'}}
                                                     >
-                                                        {aObj.image}{aObj.aName}{aObj.effectiveness}
+                                                        {aObj.image}{aObj.aName}<p style={{float: 'right'}}>{aObj.effectiveness}</p>
                                                     </ul>
                                                 ))}
                                             </div>
@@ -421,10 +421,12 @@ function GreatIzuchi() {
 
                                     <div className="content-tabs">
                                    <div className={toggleState === 4 ? "content  active-content" : "content"}>
-
-                                  <Button onClick={() => toggleTab(5)}>
-                                      High Rank
-                                  </Button>
+                                        
+                                    <div className='row'>
+                                        <Button style={{color: 'darkslategrey', float: 'right'}} onClick={() => toggleTab(5)}>
+                                            Low Rank
+                                        </Button>
+                                    </div>
                             
                                        <Table responsive>
 
@@ -448,9 +450,11 @@ function GreatIzuchi() {
 
                                  <div className={toggleState === 5 ? "content  active-content" : "content"}>
 
-                                     <Button onClick={() => toggleTab(4)}>
-                                         Low Rank
-                                     </Button>
+                                 <div className='row'>
+                                    <Button style={{color: 'darkslategrey', float: 'right'}} onClick={() => toggleTab(4)}>
+                                        High Rank
+                                    </Button>
+                                </div>
 
                                      <Table responsive>
                                          <thead>

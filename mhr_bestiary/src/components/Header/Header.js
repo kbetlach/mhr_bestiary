@@ -9,7 +9,7 @@ function Header() {
     <nav className="navbar main-header" style={{fontSize: '24px', padding: 10, backgroundColor: "darkslategray", color: "white"}}>
         <div className="nav">
             <Link to='/menu' className={window.location.pathname === '/menu'}>
-                <Button>Monster Menu</Button>
+                <Button style={{color: 'darkslategrey'}}>Monster Menu</Button>
              </Link>
              <p style={{float: 'right'}}>Monster Hunter Bestiary</p>
         </div>
