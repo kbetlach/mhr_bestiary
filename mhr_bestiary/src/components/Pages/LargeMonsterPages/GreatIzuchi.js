@@ -22,6 +22,8 @@ import FireblightImg from '../../../assets/images/ElementsAilmentsDamage/firebli
 import WaterblightImg from '../../../assets/images/ElementsAilmentsDamage/waterblight.jpg';
 import ThunderblightImg from '../../../assets/images/ElementsAilmentsDamage/thunderblight.jpg';
 import IceblightImg from '../../../assets/images/ElementsAilmentsDamage/iceblight.jpg';
+import ShrineRuinsImg from '../../../assets/images/Locations/shrineRuins.jpg';
+import FrostIslandsImg from '../../../assets/images/Locations/frostIslands.jpg';
 
 Chart.defaults.plugins.legend = false;
 
@@ -45,7 +47,7 @@ function GreatIzuchi() {
                         {id: 9, aName:"Thunderblight", image: <img src={ThunderblightImg} className="ailmentImage" alt="thunderblight icon"></img>, effectiveness: "⭐⭐"}, 
                         {id: 10, aName:"Iceblight", image: <img src={IceblightImg} className="ailmentImage" alt="iceblight icon"></img>, effectiveness: "⭐"}, 
                        ]);
-    const [selectedAilment, setAilment] = useState("");
+    const [selectedAilment, setAilment] = useState(ailments[0]);
 
     const lowRankMaterials = [
         {material: "Great Izuchi Hide", target: "21%", capture: "26%", break: "20% (Tail)", carves: "43% (Body)", dropped: "30%, 60%"},
@@ -274,8 +276,8 @@ function GreatIzuchi() {
                                             </p>
                                         <h3>Known Habitats</h3>
                                             <div className="row">
-                                                <div className="col-md-6">Shrine Ruins</div>
-                                                <div className="col-md-6">Frost Islands</div>
+                                                <div className="col-md-6">Shrine Ruins <br></br> <img className="locationImages" src={ShrineRuinsImg} alt="shrine ruins"></img></div>
+                                                <div className="col-md-6">Frost Islands <br></br> <img className="locationImages" src={FrostIslandsImg} alt="frost islands"></img></div>
                                             </div>
                                     </div>
 
