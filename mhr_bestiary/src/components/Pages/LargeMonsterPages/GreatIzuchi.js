@@ -17,7 +17,7 @@ import StunImg from '../../../assets/images/ElementsAilmentsDamage/stun.jpg';
 import ParalysisImg from '../../../assets/images/ElementsAilmentsDamage/paralysis.jpg';
 import SleepImg from '../../../assets/images/ElementsAilmentsDamage/sleep.jpg';
 import BlastImg from '../../../assets/images/ElementsAilmentsDamage/blast.jpg';
-import ExhaustImg from '../../../assets/images/ElementsAilmentsDamage/blast.jpg';
+import ExhaustImg from '../../../assets/images/ElementsAilmentsDamage/exhaust.jpg';
 import FireblightImg from '../../../assets/images/ElementsAilmentsDamage/fireblight.jpg';
 import WaterblightImg from '../../../assets/images/ElementsAilmentsDamage/waterblight.jpg';
 import ThunderblightImg from '../../../assets/images/ElementsAilmentsDamage/thunderblight.jpg';
@@ -211,6 +211,7 @@ function GreatIzuchi() {
     
     const [barOptions] = useState({
         options: {
+            events: [],
             maintainAspectRatio: true,
             indexAxis: 'y',
             scales: {
@@ -236,7 +237,7 @@ function GreatIzuchi() {
             <Header />
 
             <div className="container w3-container w3-center w3-animate-opacity">
-                <h1 style={{color: 'white'}}>Great Izuchi</h1>
+                <h1 style={{color: 'white', fontFamily: 'VTCGoblinHand'}}>Great Izuchi</h1>
                     <div className="jumbotron">
                         <div className="row">
 
@@ -249,7 +250,7 @@ function GreatIzuchi() {
 
                             <div className="col-md-10">
 
-                                <div className="bloc-tabs">
+                                <div className="bloc-tabs" style={{fontFamily: 'VTCGoblinHand'}}>
                                     <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>
                                         Ecology
                                     </button>

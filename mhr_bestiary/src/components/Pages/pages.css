@@ -114,3 +114,7 @@ body, html {
     width: 250px;
     border-radius: 25px;
   }
+
+  h3, h2 {
+    font-family: VTCGoblinHand;
+  }

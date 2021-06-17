@@ -11,7 +11,7 @@ function Header() {
             <Link to='/menu' className={window.location.pathname === '/menu'}>
                 <Button style={{color: 'darkslategrey'}}>Monster Menu</Button>
              </Link>
-             <p style={{float: 'right'}}>Monster Hunter Bestiary</p>
+             <p style={{float: 'right', fontFamily: 'VTCGoblinHand'}}>Monster Hunter Bestiary</p>
         </div>
     </nav>
 
